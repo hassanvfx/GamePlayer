@@ -1,0 +1,8 @@
+--swiftversion 5.0
+--indent 4
+--linebreaks lf
+--maxwidth 120
+--stripunusedargs closure-only
+--self remove
+--commas inline
+--header strip

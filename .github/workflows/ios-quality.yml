@@ -1,0 +1,22 @@
+name: iOS Quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  quality:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install formatters
+        run: |
+          brew install mint
+          mint install nicklockwood/SwiftFormat@0.62.1
+          mint install realm/SwiftLint@0.65.0
+          echo "$HOME/.mint/bin" >> "$GITHUB_PATH"
+      - name: Check formatting and lint
+        run: scripts/lint-swift.sh
+      - name: Build and test
+        run: scripts/test-ios.sh

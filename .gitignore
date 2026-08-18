@@ -1,0 +1,6 @@
+# ClineFlow - per-developer config
+.clineflow.local
+
+# macOS and per-user Xcode state
+.DS_Store
+xcuserdata/
